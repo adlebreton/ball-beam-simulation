@@ -714,3 +714,49 @@ Script Stack (0 frames):
 [2020.07.01-13.12.40:606][257]LogTemp: Resetting audio stream to device id 
 [2020.07.01-13.12.40:633][257]LogAudioMixer: Display: 0: FrontLeft
 [2020.07.01-13.12.40:633][257]LogAudioMixer: Display: 1: FrontRight
+[2020.07.01-13.13.36:174][ 54]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Floor)
+[2020.07.01-13.13.49:114][690]Cmd: DELETE
+[2020.07.01-13.13.49:114][690]Cmd: ACTOR DELETE
+[2020.07.01-13.13.50:729][690]LogEditorActor: Deleted Actor: PlayerStart
+[2020.07.01-13.13.50:785][690]LogUObjectHash: Compacting FUObjectHashTables data took   0.63ms
+[2020.07.01-13.13.50:787][690]LogEditorActor: Deleted 1 Actors (0.194 secs)
+[2020.07.01-13.13.50:930][699]SourceControl: fatal: /Temp: '/Temp' is outside repository
+[2020.07.01-13.13.53:731][865]Cmd: DELETE
+[2020.07.01-13.13.53:731][865]Cmd: ACTOR DELETE
+[2020.07.01-13.13.53:732][865]LogEditorActor: Deleted Actor: AtmosphericFog
+[2020.07.01-13.13.53:742][865]LogUObjectHash: Compacting FUObjectHashTables data took   0.32ms
+[2020.07.01-13.13.53:743][865]LogEditorActor: Deleted 1 Actors (0.012 secs)
+[2020.07.01-13.13.53:852][872]SourceControl: fatal: /Temp: '/Temp' is outside repository
+[2020.07.01-13.14.03:831][438]SourceControl: fatal: /Temp: '/Temp' is outside repository
+[2020.07.01-13.14.22:507][438]LogSlate: Window 'Save Level As' being destroyed
+[2020.07.01-13.14.22:519][438]LogSlate: Took 0.000209 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Light.ttf' (167K)
+[2020.07.01-13.14.22:708][438]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/ball-beam-scene" FILE="../../../../../ball-beam-simulation/MyProject/Content/ball-beam-scene.umap" SILENT=true AUTOSAVING=false KEEPDIRTY=false
+[2020.07.01-13.14.22:739][438]LogUObjectHash: Compacting FUObjectHashTables data took   0.28ms
+[2020.07.01-13.14.22:874][438]LogSavePackage: Moving '../../../../../ball-beam-simulation/MyProject/Saved/ball-beam-scene280E0BA34885316CCDF4BEA371479B54.tmp' to '../../../../../ball-beam-simulation/MyProject/Content/ball-beam-scene.umap'
+[2020.07.01-13.14.23:489][438]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/ball-beam-scene_BuiltData" FILE="../../../../../ball-beam-simulation/MyProject/Content/ball-beam-scene_BuiltData.uasset" SILENT=true
+[2020.07.01-13.14.23:563][438]LogSavePackage: Moving '../../../../../ball-beam-simulation/MyProject/Saved/ball-beam-scene_BuiltDataE0E861354CAD7AB7D34A26ACF789B016.tmp' to '../../../../../ball-beam-simulation/MyProject/Content/ball-beam-scene_BuiltData.uasset'
+[2020.07.01-13.14.23:942][438]LogFileHelpers: Saving map 'ball-beam-scene' took 1.428
+[2020.07.01-13.14.23:983][438]AssetCheck: New page: Asset Save: multiple assets
+[2020.07.01-13.14.23:983][438]LogContentValidation: Display: Validating World /Game/ball-beam-scene.ball-beam-scene
+[2020.07.01-13.14.23:983][438]LogContentValidation: Display: Validating MapBuildDataRegistry /Game/ball-beam-scene_BuiltData.ball-beam-scene_BuiltData
+[2020.07.01-13.14.24:219][438]LogSlate: Took 0.000161 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Light.ttf' (167K)
+[2020.07.01-13.14.24:240][439]SourceControl: fatal: /Temp: '/Temp' is outside repository
+[2020.07.01-13.14.39:397][853]SourceControl: fatal: D:/Epic Games/UE_4.25/Engine/Content: 'D:/Epic Games/UE_4.25/Engine/Content' is outside repository
+[2020.07.01-13.14.39:397][853]SourceControl: fatal: D:/Epic Games/UE_4.25/Engine/Plugins/2D/Paper2D/Content: 'D:/Epic Games/UE_4.25/Engine/Plugins/2D/Paper2D/Content' is outside repository
+[2020.07.01-13.14.39:397][853]SourceControl: fatal: D:/Epic Games/UE_4.25/Engine/Plugins/Developer/AnimationSharing/Content: 'D:/Epic Games/UE_4.25/Engine/Plugins/Developer/AnimationSharing/Content' is outside repository
+[2020.07.01-13.14.39:397][853]SourceControl: fatal: D:/Epic Games/UE_4.25/Engine/Plugins/Editor/GeometryMode/Content: 'D:/Epic Games/UE_4.25/Engine/Plugins/Editor/GeometryMode/Content' is outside repository
+[2020.07.01-13.14.39:397][853]SourceControl: fatal: D:/Epic Games/UE_4.25/Engine/Plugins/Enterprise/DatasmithContent/Content: 'D:/Epic Games/UE_4.25/Engine/Plugins/Enterprise/DatasmithContent/Content' is outside repository
+[2020.07.01-13.14.39:397][853]SourceControl: fatal: D:/Epic Games/UE_4.25/Engine/Plugins/Experimental/ChaosClothEditor/Content: 'D:/Epic Games/UE_4.25/Engine/Plugins/Experimental/ChaosClothEditor/Content' is outside repository
+[2020.07.01-13.14.39:397][853]SourceControl: fatal: D:/Epic Games/UE_4.25/Engine/Plugins/Experimental/ChaosNiagara/Content: 'D:/Epic Games/UE_4.25/Engine/Plugins/Experimental/ChaosNiagara/Content' is outside repository
+[2020.07.01-13.14.39:397][853]SourceControl: fatal: D:/Epic Games/UE_4.25/Engine/Plugins/Experimental/ChaosSolverPlugin/Content: 'D:/Epic Games/UE_4.25/Engine/Plugins/Experimental/ChaosSolverPlugin/Content' is outside repository
+[2020.07.01-13.14.39:397][853]SourceControl: fatal: D:/Epic Games/UE_4.25/Engine/Plugins/Experimental/GeometryCollectionPlugin/Content: 'D:/Epic Games/UE_4.25/Engine/Plugins/Experimental/GeometryCollectionPlugin/Content' is outside repository
+[2020.07.01-13.14.39:397][853]SourceControl: fatal: D:/Epic Games/UE_4.25/Engine/Plugins/Experimental/GeometryProcessing/Content: 'D:/Epic Games/UE_4.25/Engine/Plugins/Experimental/GeometryProcessing/Content' is outside repository
+[2020.07.01-13.14.39:397][853]SourceControl: fatal: D:/Epic Games/UE_4.25/Engine/Plugins/FX/Niagara/Content: 'D:/Epic Games/UE_4.25/Engine/Plugins/FX/Niagara/Content' is outside repository
+[2020.07.01-13.14.39:397][853]SourceControl: fatal: D:/Epic Games/UE_4.25/Engine/Plugins/Lumin/MagicLeap/Content: 'D:/Epic Games/UE_4.25/Engine/Plugins/Lumin/MagicLeap/Content' is outside repository
+[2020.07.01-13.14.39:397][853]SourceControl: fatal: D:/Epic Games/UE_4.25/Engine/Plugins/Lumin/MagicLeapPassableWorld/Content: 'D:/Epic Games/UE_4.25/Engine/Plugins/Lumin/MagicLeapPassableWorld/Content' is outside repository
+[2020.07.01-13.14.39:397][853]SourceControl: fatal: D:/Epic Games/UE_4.25/Engine/Plugins/Media/MediaCompositing/Content: 'D:/Epic Games/UE_4.25/Engine/Plugins/Media/MediaCompositing/Content' is outside repository
+[2020.07.01-13.14.39:397][853]SourceControl: fatal: D:/Epic Games/UE_4.25/Engine/Plugins/MovieScene/MovieRenderPipeline/Content: 'D:/Epic Games/UE_4.25/Engine/Plugins/MovieScene/MovieRenderPipeline/Content' is outside repository
+[2020.07.01-13.14.39:397][853]SourceControl: fatal: D:/Epic Games/UE_4.25/Engine/Plugins/Runtime/Oculus/OculusVR/Content: 'D:/Epic Games/UE_4.25/Engine/Plugins/Runtime/Oculus/OculusVR/Content' is outside repository
+[2020.07.01-13.14.39:397][853]SourceControl: fatal: D:/Epic Games/UE_4.25/Engine/Plugins/Runtime/PostSplashScreen/Content: 'D:/Epic Games/UE_4.25/Engine/Plugins/Runtime/PostSplashScreen/Content' is outside repository
+[2020.07.01-13.14.39:397][853]SourceControl: fatal: D:/Epic Games/UE_4.25/Engine/Plugins/Runtime/Steam/SteamVR/Content: 'D:/Epic Games/UE_4.25/Engine/Plugins/Runtime/Steam/SteamVR/Content' is outside repository
+[2020.07.01-13.14.50:395][853]LogSlate: Window 'Submit Files' being destroyed
