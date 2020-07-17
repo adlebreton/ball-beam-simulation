@@ -23,6 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
             this.Execute = new System.Windows.Forms.Button();
             this.Pause = new System.Windows.Forms.Button();
             this.Angle_bar = new System.Windows.Forms.TrackBar();
@@ -31,9 +32,14 @@
             this.ballPos_disp = new System.Windows.Forms.NumericUpDown();
             this.ballPos_label = new System.Windows.Forms.Label();
             this.controller_label = new System.Windows.Forms.Label();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ballBeamToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ballPlaneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pendulumToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.Angle_bar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Angle_disp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ballPos_disp)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Execute
@@ -104,6 +110,33 @@
             this.controller_label.TabIndex = 7;
             this.controller_label.Text = "Auto stabilizer";
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ballBeamToolStripMenuItem,
+            this.ballPlaneToolStripMenuItem,
+            this.pendulumToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 92);
+            // 
+            // ballBeamToolStripMenuItem
+            // 
+            this.ballBeamToolStripMenuItem.Name = "ballBeamToolStripMenuItem";
+            this.ballBeamToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ballBeamToolStripMenuItem.Text = "ball beam";
+            // 
+            // ballPlaneToolStripMenuItem
+            // 
+            this.ballPlaneToolStripMenuItem.Name = "ballPlaneToolStripMenuItem";
+            this.ballPlaneToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ballPlaneToolStripMenuItem.Text = "ball plane";
+            // 
+            // pendulumToolStripMenuItem
+            // 
+            this.pendulumToolStripMenuItem.Name = "pendulumToolStripMenuItem";
+            this.pendulumToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pendulumToolStripMenuItem.Text = "pendulum";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -122,6 +155,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Angle_bar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Angle_disp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ballPos_disp)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -137,6 +171,10 @@
         private System.Windows.Forms.NumericUpDown ballPos_disp;
         private System.Windows.Forms.Label ballPos_label;
         private System.Windows.Forms.Label controller_label;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem ballBeamToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ballPlaneToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pendulumToolStripMenuItem;
     }
 }
 
