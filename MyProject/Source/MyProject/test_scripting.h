@@ -3,12 +3,12 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Components/ActorComponent.h"
+#include "Components/SceneComponent.h"
 #include "test_scripting.generated.h"
 
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
-class MYPROJECT_API Utest_scripting : public UActorComponent
+class MYPROJECT_API Utest_scripting : public USceneComponent
 {
 	GENERATED_BODY()
 
