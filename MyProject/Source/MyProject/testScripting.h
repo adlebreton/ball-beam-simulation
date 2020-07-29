@@ -5,8 +5,8 @@
 #include "CoreMinimal.h"
 #include "Components/SceneComponent.h"
 #include "Misc/OutputDeviceNull.h"
+#include "PhysicsEngine/PhysicsConstraintComponent.h"
 #include "testScripting.generated.h"
-
 
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
@@ -25,9 +25,15 @@ protected:
 public:	
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+	void set_target_angle(float angle);
+	float get_cur_angle();
+	float get_ball_pos();
 
 private:
-	float angle = 0, way = 0.1;
+	float _angle = 0, way = 0.1;
 	AActor* parent;
+	UStaticMeshComponent* beam=NULL;
+	UStaticMeshComponent* ball=NULL;
+	UPhysicsConstraintComponent* motor=NULL;
 
 };
