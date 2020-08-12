@@ -26,20 +26,23 @@
             this.components = new System.ComponentModel.Container();
             this.Execute = new System.Windows.Forms.Button();
             this.Pause = new System.Windows.Forms.Button();
-            this.Angle_bar = new System.Windows.Forms.TrackBar();
-            this.angle_label = new System.Windows.Forms.Label();
-            this.Angle_disp = new System.Windows.Forms.NumericUpDown();
-            this.ballPos_disp = new System.Windows.Forms.NumericUpDown();
-            this.ballPos_label = new System.Windows.Forms.Label();
-            this.controller_label = new System.Windows.Forms.Label();
+            this.angleBar = new System.Windows.Forms.TrackBar();
+            this.angleLabel = new System.Windows.Forms.Label();
+            this.angleDisp = new System.Windows.Forms.NumericUpDown();
+            this.ballPosLabel = new System.Windows.Forms.Label();
+            this.controllerLabel = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ballBeamToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ballPlaneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pendulumToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.Angle_bar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Angle_disp)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ballPos_disp)).BeginInit();
+            this.ballPosDisp = new System.Windows.Forms.NumericUpDown();
+            this.sharedMemoryLabel = new System.Windows.Forms.Label();
+            this.sharedMemoryStatusLabel = new System.Windows.Forms.Label();
+            this.controllerStatusLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.angleBar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.angleDisp)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ballPosDisp)).BeginInit();
             this.SuspendLayout();
             // 
             // Execute
@@ -60,55 +63,48 @@
             this.Pause.Text = "Pause";
             this.Pause.UseVisualStyleBackColor = true;
             // 
-            // Angle_bar
+            // angleBar
             // 
-            this.Angle_bar.Location = new System.Drawing.Point(52, 35);
-            this.Angle_bar.Maximum = 20;
-            this.Angle_bar.Minimum = -20;
-            this.Angle_bar.Name = "Angle_bar";
-            this.Angle_bar.Size = new System.Drawing.Size(165, 45);
-            this.Angle_bar.TabIndex = 2;
+            this.angleBar.Location = new System.Drawing.Point(52, 35);
+            this.angleBar.Maximum = 20;
+            this.angleBar.Minimum = -20;
+            this.angleBar.Name = "angleBar";
+            this.angleBar.Size = new System.Drawing.Size(165, 45);
+            this.angleBar.TabIndex = 2;
             // 
-            // angle_label
+            // angleLabel
             // 
-            this.angle_label.AutoSize = true;
-            this.angle_label.Location = new System.Drawing.Point(12, 35);
-            this.angle_label.Name = "angle_label";
-            this.angle_label.Size = new System.Drawing.Size(34, 13);
-            this.angle_label.TabIndex = 3;
-            this.angle_label.Text = "Angle";
+            this.angleLabel.AutoSize = true;
+            this.angleLabel.Location = new System.Drawing.Point(12, 35);
+            this.angleLabel.Name = "angleLabel";
+            this.angleLabel.Size = new System.Drawing.Size(34, 13);
+            this.angleLabel.TabIndex = 3;
+            this.angleLabel.Text = "Angle";
             // 
-            // Angle_disp
+            // angleDisp
             // 
-            this.Angle_disp.Location = new System.Drawing.Point(223, 35);
-            this.Angle_disp.Name = "Angle_disp";
-            this.Angle_disp.Size = new System.Drawing.Size(59, 20);
-            this.Angle_disp.TabIndex = 4;
+            this.angleDisp.Location = new System.Drawing.Point(223, 35);
+            this.angleDisp.Name = "angleDisp";
+            this.angleDisp.Size = new System.Drawing.Size(59, 20);
+            this.angleDisp.TabIndex = 4;
             // 
-            // ballPos_disp
+            // ballPosLabel
             // 
-            this.ballPos_disp.Location = new System.Drawing.Point(96, 77);
-            this.ballPos_disp.Name = "ballPos_disp";
-            this.ballPos_disp.Size = new System.Drawing.Size(59, 20);
-            this.ballPos_disp.TabIndex = 5;
+            this.ballPosLabel.AutoSize = true;
+            this.ballPosLabel.Location = new System.Drawing.Point(12, 79);
+            this.ballPosLabel.Name = "ballPosLabel";
+            this.ballPosLabel.Size = new System.Drawing.Size(64, 13);
+            this.ballPosLabel.TabIndex = 6;
+            this.ballPosLabel.Text = "Ball Position";
             // 
-            // ballPos_label
+            // controllerLabel
             // 
-            this.ballPos_label.AutoSize = true;
-            this.ballPos_label.Location = new System.Drawing.Point(12, 79);
-            this.ballPos_label.Name = "ballPos_label";
-            this.ballPos_label.Size = new System.Drawing.Size(63, 13);
-            this.ballPos_label.TabIndex = 6;
-            this.ballPos_label.Text = "Ball position";
-            // 
-            // controller_label
-            // 
-            this.controller_label.AutoSize = true;
-            this.controller_label.Location = new System.Drawing.Point(15, 153);
-            this.controller_label.Name = "controller_label";
-            this.controller_label.Size = new System.Drawing.Size(72, 13);
-            this.controller_label.TabIndex = 7;
-            this.controller_label.Text = "Auto stabilizer";
+            this.controllerLabel.AutoSize = true;
+            this.controllerLabel.Location = new System.Drawing.Point(15, 153);
+            this.controllerLabel.Name = "controllerLabel";
+            this.controllerLabel.Size = new System.Drawing.Size(74, 13);
+            this.controllerLabel.TabIndex = 7;
+            this.controllerLabel.Text = "Auto Stabilizer";
             // 
             // contextMenuStrip1
             // 
@@ -117,45 +113,84 @@
             this.ballPlaneToolStripMenuItem,
             this.pendulumToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 92);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(130, 70);
             // 
             // ballBeamToolStripMenuItem
             // 
             this.ballBeamToolStripMenuItem.Name = "ballBeamToolStripMenuItem";
-            this.ballBeamToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ballBeamToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.ballBeamToolStripMenuItem.Text = "ball beam";
             // 
             // ballPlaneToolStripMenuItem
             // 
             this.ballPlaneToolStripMenuItem.Name = "ballPlaneToolStripMenuItem";
-            this.ballPlaneToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ballPlaneToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.ballPlaneToolStripMenuItem.Text = "ball plane";
             // 
             // pendulumToolStripMenuItem
             // 
             this.pendulumToolStripMenuItem.Name = "pendulumToolStripMenuItem";
-            this.pendulumToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pendulumToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.pendulumToolStripMenuItem.Text = "pendulum";
+            // 
+            // ballPosDisp
+            // 
+            this.ballPosDisp.Location = new System.Drawing.Point(96, 77);
+            this.ballPosDisp.Name = "ballPosDisp";
+            this.ballPosDisp.ReadOnly = true;
+            this.ballPosDisp.Size = new System.Drawing.Size(59, 20);
+            this.ballPosDisp.TabIndex = 5;
+            this.ballPosDisp.ThousandsSeparator = true;
+            // 
+            // sharedMemoryLabel
+            // 
+            this.sharedMemoryLabel.AutoSize = true;
+            this.sharedMemoryLabel.Location = new System.Drawing.Point(15, 214);
+            this.sharedMemoryLabel.Name = "sharedMemoryLabel";
+            this.sharedMemoryLabel.Size = new System.Drawing.Size(117, 13);
+            this.sharedMemoryLabel.TabIndex = 8;
+            this.sharedMemoryLabel.Text = "Shared Memory Status:";
+            // 
+            // sharedMemoryStatusLabel
+            // 
+            this.sharedMemoryStatusLabel.AutoSize = true;
+            this.sharedMemoryStatusLabel.Location = new System.Drawing.Point(139, 214);
+            this.sharedMemoryStatusLabel.Name = "sharedMemoryStatusLabel";
+            this.sharedMemoryStatusLabel.Size = new System.Drawing.Size(79, 13);
+            this.sharedMemoryStatusLabel.TabIndex = 9;
+            this.sharedMemoryStatusLabel.Text = "Not Connected";
+            // 
+            // controllerStatusLabel
+            // 
+            this.controllerStatusLabel.AutoSize = true;
+            this.controllerStatusLabel.Location = new System.Drawing.Point(95, 153);
+            this.controllerStatusLabel.Name = "controllerStatusLabel";
+            this.controllerStatusLabel.Size = new System.Drawing.Size(21, 13);
+            this.controllerStatusLabel.TabIndex = 10;
+            this.controllerStatusLabel.Text = "Off";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(302, 450);
-            this.Controls.Add(this.controller_label);
-            this.Controls.Add(this.ballPos_label);
-            this.Controls.Add(this.ballPos_disp);
-            this.Controls.Add(this.Angle_disp);
-            this.Controls.Add(this.angle_label);
-            this.Controls.Add(this.Angle_bar);
+            this.Controls.Add(this.controllerStatusLabel);
+            this.Controls.Add(this.sharedMemoryStatusLabel);
+            this.Controls.Add(this.sharedMemoryLabel);
+            this.Controls.Add(this.controllerLabel);
+            this.Controls.Add(this.ballPosLabel);
+            this.Controls.Add(this.ballPosDisp);
+            this.Controls.Add(this.angleDisp);
+            this.Controls.Add(this.angleLabel);
+            this.Controls.Add(this.angleBar);
             this.Controls.Add(this.Pause);
             this.Controls.Add(this.Execute);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.Angle_bar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Angle_disp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ballPos_disp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.angleBar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.angleDisp)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ballPosDisp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,16 +200,19 @@
 
         private System.Windows.Forms.Button Execute;
         private System.Windows.Forms.Button Pause;
-        private System.Windows.Forms.TrackBar Angle_bar;
-        private System.Windows.Forms.Label angle_label;
-        private System.Windows.Forms.NumericUpDown Angle_disp;
-        private System.Windows.Forms.NumericUpDown ballPos_disp;
-        private System.Windows.Forms.Label ballPos_label;
-        private System.Windows.Forms.Label controller_label;
+        private System.Windows.Forms.TrackBar angleBar;
+        private System.Windows.Forms.Label angleLabel;
+        private System.Windows.Forms.NumericUpDown angleDisp;
+        private System.Windows.Forms.Label ballPosLabel;
+        private System.Windows.Forms.Label controllerLabel;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem ballBeamToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ballPlaneToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pendulumToolStripMenuItem;
+        private System.Windows.Forms.NumericUpDown ballPosDisp;
+        private System.Windows.Forms.Label sharedMemoryLabel;
+        private System.Windows.Forms.Label sharedMemoryStatusLabel;
+        private System.Windows.Forms.Label controllerStatusLabel;
     }
 }
 
