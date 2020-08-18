@@ -18,7 +18,7 @@ void UmovementManager::BeginPlay(){
 
 	//memory manager
 	if (MManager.OpenMappedMemory())
-		MappedMData = MManager.GetMappedMemoryData();
+		MManager.GetMappedMemoryData();
 
 	TArray<UActorComponent*> ArrayChild;
 	
@@ -38,23 +38,33 @@ void UmovementManager::BeginPlay(){
 			motor = (UPhysicsConstraintComponent*)child;
 		}
 	}
-	
 }
 
 // Called every frame
 void UmovementManager::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction){
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
-	
-	_angle = _angle + way;
+	/*_angle = _angle + way;
 	if (_angle >= 45 || _angle <= -45)
 		way = -way;
-	/*
-	FOutputDeviceNull ar;
+	set_target_angle(_angle);*/
+	/*if (way >= 60) {
+		_angle = -_angle;
+		set_target_angle(_angle);
+		way = 0;
+	}else way++;*/
+
+	/*FOutputDeviceNull ar;
 	const FString command = FString::Printf(TEXT("set_angle %f"), _angle);
 	parent->CallFunctionByNameWithArguments(*command, ar, NULL, true);*/
-	FRotator myRotator = FRotator::ZeroRotator;
-	myRotator.Roll = _angle;
-	motor->SetAngularOrientationTarget(myRotator);
+	
+	float instruction;
+	MManager.setDelta(DeltaTime);
+	MManager.setCurrAngle(get_curr_angle());
+	MManager.setCurrPos(get_ball_pos());
+	
+	instruction = MManager.getTargetAngle();
+	//UE_LOG(LogTemp, Warning, TEXT("instruction: %f"), instruction);
+	set_target_angle(instruction);
 }
 
 void UmovementManager::set_target_angle(float angle){
@@ -63,10 +73,12 @@ void UmovementManager::set_target_angle(float angle){
 	parent->CallFunctionByNameWithArguments(*command, ar, NULL, true);*/
 	FRotator myRotator = FRotator::ZeroRotator;
 	myRotator.Roll = angle;
+	//UE_LOG(LogTemp, Warning, TEXT("instruction: %f"), angle);
 	motor->SetAngularOrientationTarget(myRotator);
+	beam->WakeRigidBody();//fixes the beam not moving after targeting -45 to 45
 }
 
-float UmovementManager::get_cur_angle(){
+float UmovementManager::get_curr_angle(){
 	/*FOutputDeviceNull ar;
 	parent->CallFunctionByNameWithArguments(TEXT("get_angle"), ar, NULL, true);
 	UE_LOG(LogTemp, Warning, TEXT("angle: %f"), beam->GetComponentRotation().Roll);*/

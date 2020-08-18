@@ -1,0 +1,10 @@
+D:\ball-beam-simulation\shared_memory_controller\shared_memory_controller\bin\Release\shared_memory_controller.exe.config
+D:\ball-beam-simulation\shared_memory_controller\shared_memory_controller\bin\Release\shared_memory_controller.exe
+D:\ball-beam-simulation\shared_memory_controller\shared_memory_controller\bin\Release\shared_memory_controller.pdb
+D:\ball-beam-simulation\shared_memory_controller\shared_memory_controller\obj\Release\shared_memory_controller.csprojAssemblyReference.cache
+D:\ball-beam-simulation\shared_memory_controller\shared_memory_controller\obj\Release\shared_memory_controller.Form1.resources
+D:\ball-beam-simulation\shared_memory_controller\shared_memory_controller\obj\Release\shared_memory_controller.Properties.Resources.resources
+D:\ball-beam-simulation\shared_memory_controller\shared_memory_controller\obj\Release\shared_memory_controller.csproj.GenerateResource.cache
+D:\ball-beam-simulation\shared_memory_controller\shared_memory_controller\obj\Release\shared_memory_controller.csproj.CoreCompileInputs.cache
+D:\ball-beam-simulation\shared_memory_controller\shared_memory_controller\obj\Release\shared_memory_controller.exe
+D:\ball-beam-simulation\shared_memory_controller\shared_memory_controller\obj\Release\shared_memory_controller.pdb

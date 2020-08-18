@@ -17,7 +17,17 @@ public:
 	float* GetMappedMemoryData();
 	void CloseSharedMemory();
 
+	//setters and getters for value
+	void setDelta(float delta);
+	void setCurrPos(float pos);
+	void setCurrAngle(float angle);
+	float getTargetAngle();
+
 private:
 	void* SharedMemoryHandle; // Mapped memory handle.
 	float* SharedMemoryData; // Pointer to memory data.
+	/*float* _delta;
+	float* _currPos;
+	float* _currAngle;
+	float* _targAngle;*/
 };

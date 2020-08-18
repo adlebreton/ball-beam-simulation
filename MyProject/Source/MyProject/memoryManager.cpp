@@ -39,14 +39,32 @@ float* UmemoryManager::GetMappedMemoryData() {
 	SharedMemoryData = (float*)MapViewOfFile(SharedMemoryHandle,
 		FILE_MAP_ALL_ACCESS,
 		0, 0,
-		sizeof(float) * 4);
+		sizeof(float) * 4); // from cpp to c#: delta, ball pos and angle //from c# to cpp: target angle
 
 	if (!SharedMemoryData){
 		UE_LOG(LogClass, Log, TEXT("Memory-mapped data does not exist."));
 		return NULL;
 	}
-
 	return SharedMemoryData;
+	/*_delta= (float*)MapViewOfFile(SharedMemoryHandle,
+		FILE_MAP_ALL_ACCESS,
+		0, 0,
+		sizeof(float));
+	_currPos = (float*)MapViewOfFile(SharedMemoryHandle,
+		FILE_MAP_ALL_ACCESS,
+		0, sizeof(float),
+		sizeof(float));
+	_currAngle = (float*)MapViewOfFile(SharedMemoryHandle,
+		FILE_MAP_ALL_ACCESS,
+		0, sizeof(float)*2,
+		sizeof(float));
+	_targAngle = (float*)MapViewOfFile(SharedMemoryHandle,
+		FILE_MAP_ALL_ACCESS,
+		0, sizeof(float) * 3,
+		sizeof(float));
+	if (!_delta || !_currPos || !_currAngle || !_targAngle) {
+		UE_LOG(LogClass, Log, TEXT("Memory-mapped data does not exist."));
+	}*/
 }
 
 void UmemoryManager::CloseSharedMemory() {
@@ -54,9 +72,39 @@ void UmemoryManager::CloseSharedMemory() {
 		UnmapViewOfFile(SharedMemoryData);
 		SharedMemoryData = nullptr;
 	}
+	/*if (_delta != nullptr || _currPos != nullptr || _currAngle != nullptr || _targAngle != nullptr) {
+		UnmapViewOfFile(_delta);
+		_delta = nullptr;
+		UnmapViewOfFile(_currPos);
+		_currPos = nullptr;
+		UnmapViewOfFile(_currAngle);
+		_currAngle = nullptr;
+		UnmapViewOfFile(_targAngle);
+		_targAngle = nullptr;
+	}*/
 
 	if (SharedMemoryHandle != nullptr){
 		CloseHandle(SharedMemoryHandle);
 		SharedMemoryHandle = nullptr;
 	}
+}
+
+void UmemoryManager::setDelta(float delta) {
+	SharedMemoryData[0] = delta;
+	//_delta[0] = delta;
+}
+
+void UmemoryManager::setCurrPos(float pos) {
+	SharedMemoryData[1] = pos;
+	//_currPos[0] = pos;
+}
+
+void UmemoryManager::setCurrAngle(float angle) {
+	SharedMemoryData[2] = angle;
+	//_currAngle[0] = angle;
+}
+
+float UmemoryManager::getTargetAngle() {
+	return SharedMemoryData[3];
+	//return _targAngle[0];
 }

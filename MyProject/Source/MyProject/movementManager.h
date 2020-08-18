@@ -28,15 +28,15 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 	void set_target_angle(float angle);
-	float get_cur_angle();
+	float get_curr_angle();
 	float get_ball_pos();
 
 private:
-	float _angle = 0, way = 0.1;
+	float _angle = 45;
+	float way = 0;
 	AActor* parent;
 	UStaticMeshComponent* beam=NULL;
 	UStaticMeshComponent* ball=NULL;
 	UPhysicsConstraintComponent* motor=NULL;
 	UmemoryManager MManager;
-	float* MappedMData;
 };
