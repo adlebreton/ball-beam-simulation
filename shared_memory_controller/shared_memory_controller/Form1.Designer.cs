@@ -42,11 +42,14 @@
             this.currentAngleDisp = new System.Windows.Forms.NumericUpDown();
             this.timerUI = new System.Windows.Forms.Timer(this.components);
             this.shareMemoryButton = new System.Windows.Forms.Button();
+            this.deltaLabel = new System.Windows.Forms.Label();
+            this.deltaDisp = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.targetPosBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TargetPosDisp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ballPosDisp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.targetAngleDisp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.currentAngleDisp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deltaDisp)).BeginInit();
             this.SuspendLayout();
             // 
             // Execute
@@ -129,12 +132,12 @@
             // 
             this.ballPosDisp.Location = new System.Drawing.Point(82, 79);
             this.ballPosDisp.Maximum = new decimal(new int[] {
-            500,
+            700,
             0,
             0,
             0});
             this.ballPosDisp.Minimum = new decimal(new int[] {
-            500,
+            700,
             0,
             0,
             -2147483648});
@@ -246,11 +249,37 @@
             this.shareMemoryButton.UseVisualStyleBackColor = true;
             this.shareMemoryButton.Click += new System.EventHandler(this.shareMemoryButton_Click);
             // 
+            // deltaLabel
+            // 
+            this.deltaLabel.AutoSize = true;
+            this.deltaLabel.Location = new System.Drawing.Point(153, 81);
+            this.deltaLabel.Name = "deltaLabel";
+            this.deltaLabel.Size = new System.Drawing.Size(32, 13);
+            this.deltaLabel.TabIndex = 17;
+            this.deltaLabel.Text = "Delta";
+            // 
+            // deltaDisp
+            // 
+            this.deltaDisp.DecimalPlaces = 4;
+            this.deltaDisp.Location = new System.Drawing.Point(223, 79);
+            this.deltaDisp.Maximum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.deltaDisp.Name = "deltaDisp";
+            this.deltaDisp.ReadOnly = true;
+            this.deltaDisp.Size = new System.Drawing.Size(59, 20);
+            this.deltaDisp.TabIndex = 16;
+            this.deltaDisp.ThousandsSeparator = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(319, 275);
+            this.Controls.Add(this.deltaLabel);
+            this.Controls.Add(this.deltaDisp);
             this.Controls.Add(this.shareMemoryButton);
             this.Controls.Add(this.currentAngleLabel);
             this.Controls.Add(this.currentAngleDisp);
@@ -274,6 +303,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ballPosDisp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.targetAngleDisp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.currentAngleDisp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deltaDisp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -299,6 +329,8 @@
         private System.Windows.Forms.NumericUpDown currentAngleDisp;
         private System.Windows.Forms.Timer timerUI;
         private System.Windows.Forms.Button shareMemoryButton;
+        private System.Windows.Forms.Label deltaLabel;
+        private System.Windows.Forms.NumericUpDown deltaDisp;
     }
 }
 

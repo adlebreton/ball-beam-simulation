@@ -19,9 +19,9 @@ namespace shared_memory_controller {
         private float targetPos = 0;
         private float prevError = 0;
         private float prevU = 0;
-        private float T = 0.07f;
+        private float T = 0.07f; //default was 0.07f
         private float k = 1;
-        private float a=7;
+        private float a=3.5f; //default was 7
         private double targetAngle = 0;
         private bool useController = false;
         public Form1() {
@@ -50,9 +50,10 @@ namespace shared_memory_controller {
 
         private void timerTick_Tick(object sender, EventArgs e) {//this will be used arround 60 times a second
             float currPos = SharingMemory.getPos();
-            float delta = SharingMemory.getDelta();
+            //float delta = SharingMemory.getDelta();
+            float delta = 0.02f;
             float temp1 =T/(T+delta);
-            float temp2 = k * (delta * a * T) / (delta + T);
+            float temp2 = k * (delta + a * T) / (delta + T);
             float temp3 = -(k * a * T) / (delta + T);
             float error = (targetPos - currPos) * 0.1024f;
             float U = temp1 * prevU + temp2 * error + temp3 * prevError;
@@ -68,9 +69,11 @@ namespace shared_memory_controller {
             //refresh the UI values
             float currPos = SharingMemory.getPos();
             float currAngle = SharingMemory.getAngle();
+            float delta = SharingMemory.getDelta();
             currentAngleDisp.Value = Convert.ToDecimal(currAngle);
             ballPosDisp.Value = Convert.ToDecimal(currPos);
             targetAngleDisp.Value = Convert.ToDecimal(targetAngle);
+            deltaDisp.Value = Convert.ToDecimal(delta);
         }
 
         private void shareMemoryButton_Click(object sender, EventArgs e) {
